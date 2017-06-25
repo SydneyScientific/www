@@ -1,0 +1,190 @@
+<md-sidenav-container [class.sydapp-dark]="isDarkTheme">
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    Sidenav
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    Scientific.Sydney
+
+    <span class="app-toolbar-filler"></span>
+    <em>ending blindness</em>
+  </md-toolbar>
+
+  <div class="app-content">
+    <md-grid-list cols="4" rowHeight="100px">
+      <md-grid-tile colspan="3" rowspan="1" [style.background]="'lightblue'">One</md-grid-tile>
+      <md-grid-tile colspan="1" rowspan="2" [style.background]="'lightgreen'">Two</md-grid-tile>
+      <md-grid-tile colspan="1" rowspan="1" [style.background]="'lightpink'">Three</md-grid-tile>
+      <md-grid-tile colspan="2" rowspan="1" [style.background]="'#DDBDF1'">Four</md-grid-tile>
+    </md-grid-list>
+    <md-card>
+
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title>Shiba Inu</md-card-title>
+        <md-card-subtitle>Dog Breed</md-card-subtitle>
+      </md-card-header>
+
+      <md-card-content>
+        <i class="material-icons">play_circle_filled</i>
+        <h4>Features</h4>
+        Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi
+        amet do dolor eu fugiat consectetur elit cillum esse.
+        <md-card-actions>
+          <button md-button>Read our features</button>
+        </md-card-actions>
+      </md-card-content>
+    </md-card>
+
+
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <header
+        class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+        <i class="material-icons">play_circle_filled</i>
+      </header>
+      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-card__supporting-text">
+          <h4>Features</h4>
+          Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi
+          amet do dolor eu fugiat consectetur elit cillum esse.
+        </div>
+        <div class="mdl-card__actions">
+          <a href="#" class="mdl-button">Read our features</a>
+        </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
+        <li class="mdl-menu__item">Lorem</li>
+        <li class="mdl-menu__item" disabled>Ipsum</li>
+        <li class="mdl-menu__item">Dolor</li>
+      </ul>
+    </section>
+
+
+    <md-card>
+      <button md-button>FLAT</button>
+      <button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
+      <button md-raised-button color="primary">PRIMARY RAISED</button>
+      <button md-raised-button color="accent">ACCENT RAISED</button>
+    </md-card>
+
+    <md-card>
+      <md-checkbox>Unchecked</md-checkbox>
+      <md-checkbox [checked]="true">Checked</md-checkbox>
+      <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+      <md-checkbox [disabled]="true">Disabled</md-checkbox>
+    </md-card>
+
+    <md-card>
+      <md-radio-button name="symbol">Alpha</md-radio-button>
+      <md-radio-button name="symbol">Beta</md-radio-button>
+      <md-radio-button name="symbol" disabled>Gamma</md-radio-button>
+    </md-card>
+
+    <md-card class="app-input-section">
+      <md-input-container>
+        <input mdInput placeholder="First name">
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput #nickname placeholder="Nickname" maxlength="50">
+        <md-hint align="end">
+          {{nickname.value.length}} / 50
+        </md-hint>
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput #favphone>
+        <md-placeholder>
+          <i class="material-icons app-input-icon">android</i> Favorite phone
+        </md-placeholder>
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="Motorcycle model">
+        <span md-prefix>
+          <i class="material-icons app-input-icon">motorcycle</i>
+        </span>
+      </md-input-container>
+    </md-card>
+
+    <md-card>
+      <md-list class="app-list">
+        <md-list-item *ngFor="let food of foods">
+          <h3 md-line>{{food.name}}</h3>
+          <p md-line class="demo-secondary-text">{{food.rating}}</p>
+        </md-list-item>
+      </md-list>
+    </md-card>
+
+    <md-card>
+      <md-spinner class="app-spinner"></md-spinner>
+      <md-spinner color="accent" class="app-spinner"></md-spinner>
+    </md-card>
+
+    <md-card>
+      <label>
+        Indeterminate progress-bar
+        <md-progress-bar
+          class="app-progress"
+          mode="indeterminate"
+          aria-label="Indeterminate progress-bar example"></md-progress-bar>
+      </label>
+
+      <label>
+        Determinate progress bar - {{progress}}%
+        <md-progress-bar
+          class="app-progress"
+          color="accent"
+          mode="determinate"
+          [value]="progress"
+          aria-label="Determinate progress-bar example"></md-progress-bar>
+      </label>
+    </md-card>
+
+    <md-card>
+      <md-tab-group>
+        <md-tab label="Earth">
+          <p>EARTH</p>
+        </md-tab>
+        <md-tab label="Fire">
+          <p>FIRE</p>
+        </md-tab>
+      </md-tab-group>
+    </md-card>
+
+    <md-card>
+      <md-icon>build</md-icon>
+    </md-card>
+
+    <md-card>
+      <button md-button [md-menu-trigger-for]="menu">
+        MENU
+      </button>
+    </md-card>
+
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>Lemon</button>
+      <button md-menu-item>Lime</button>
+      <button md-menu-item>Banana</button>
+    </md-menu>
+
+    <md-card>
+      <p>Last dialog result: {{lastDialogResult}}</p>
+      <button md-raised-button (click)="openDialog()">DIALOG</button>
+      <button md-raised-button (click)="showSnackbar()">SNACKBAR</button>
+    </md-card>
+
+  </div>
+
+</md-sidenav-container>
+
+<span class="app-action" [class.sydapp-dark]="isDarkTheme">
+  <button md-fab><md-icon>check circle</md-icon></button>
+</span>
